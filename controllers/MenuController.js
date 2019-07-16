@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const timestamp = require('console-timestamp');
 
 module.exports = class MenuController {
   constructor(){
@@ -9,6 +10,7 @@ module.exports = class MenuController {
           message: "Please choose from an option below: ",
           choices: [
             "Add new contact",
+            "Get Date",
             "Exit"
           ]
         }
@@ -22,6 +24,9 @@ module.exports = class MenuController {
       switch(response.mainMenuChoice){
         case "Add new contact":
           this.addContact();
+          break;
+        case "Get Date":
+          this.getDate();
           break;
         case "Exit":
           this.exit();
@@ -47,5 +52,9 @@ module.exports = class MenuController {
   exit(){
     console.log("Thanks for using AddressBloc!");
     process.exit();
+  }
+  getDate(){
+    console.log('DD-MM-YY hh:mm'.timestamp);
+    this.main();
   }
 }

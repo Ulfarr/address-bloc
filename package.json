@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^5.1.0"
+    "console-timestamp": "^0.3.0",
+    "inquirer": "^5.1.0",
+    "log-timestamp": "^0.1.2",
+    "save": "^2.4.0"
   }
 }
