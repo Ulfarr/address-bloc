@@ -10,6 +10,8 @@ module.exports = class MenuController {
           message: "Please choose from an option below: ",
           choices: [
             "Add new contact",
+            "View all contacts",
+            "Get today's date",
             "Exit"
           ]
         }
@@ -24,6 +26,9 @@ module.exports = class MenuController {
         case "Add new contact":
           this.addContact();
           break;
+        case "View all contacts":
+          this.getContacts();
+          break
         case "Exit":
           this.exit();
         default:
@@ -49,6 +54,25 @@ module.exports = class MenuController {
         console.log(err);
         this.main();
       });
+    });
+  }
+
+  getContacts(){
+    this.clear();
+
+    this.book.getContacts().then((contacts) => {
+      for (let contact of contacts) {
+        console.log(`
+        name: ${contact.name}
+        phone number: ${contact.phone}
+        email: ${contact.email}
+        ---------------`
+        );
+      }
+      this.main();
+    }).catch((err) => {
+      console.log(err);
+      this.main();
     });
   }
 
