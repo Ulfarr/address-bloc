@@ -1,0 +1,17 @@
+Questions
+
+1. Performing a search of a sorted by name IRS database for a taxpayer name
+
+A: In this case Binary Search would be the best. The list is already sorted and the records are likely very extensive given that it is a database of taxpayers making binary O(log(n)) much more efficient than iterative O(n).
+
+2. Searching through an unsorted list containing the days of the weekend
+
+A: Given that the list is only a few items long and sorting them would take longer than simply iterating through them, Linear iterative search wulod be most efficient.
+
+3. Given a list of the planets in the Milky Way in ascending order by size, search for a planet with a given size.
+
+A: In this case given the list is already sorted and is of a great number it would be more efficient to use the Binary search to find the given size than to use Iterative linear search.
+
+4. Searching for a checkpoint name in an unsorted list of Bloc checkpoints
+
+A: In this case the number of checkpoints searched through would be enough to make it necessary to sort the list and utilize binary search over iterating through the vast list one at a time. Also this process becomes even more efficient given the circumstance of someone performing a search for additional checkpoints after the list had been sorted the first time.
