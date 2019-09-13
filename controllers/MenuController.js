@@ -13,6 +13,7 @@ module.exports = class MenuController {
             "View all contacts",
             "Get time",
             "Search for a contact",
+            "Remind Me",
             "Exit"
           ]
         }
@@ -40,6 +41,9 @@ module.exports = class MenuController {
           break;
         case 'Get time':
           this.getTime();
+          break;
+        case 'Remind Me':
+          this.remindMe();
           break;
       }
     })
@@ -81,6 +85,12 @@ module.exports = class MenuController {
         console.log(err);
         this.main();
       });
+    }
+
+    remindMe() {
+      console.log('Learning is a life-long pursuit');
+      this.main();
+      return 'Learning is a life-long pursuit';
     }
 
     search(){
